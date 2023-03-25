@@ -35,7 +35,11 @@ mongoose.connection.on("disconnected", () => {
 
 
 app.use((req, res, next) => {
-  res.setHeader("Access-Control-Allow-Origin", "*");
+  res.setHeader(
+    "Access-Control-Allow-Origin",
+    "https://hotels-booking-8wfv.onrender.com"
+  );
+  res.setHeader("Access-Control-Allow-Headers", "Content-Type");
   next();
 });
 
