@@ -33,6 +33,21 @@ mongoose.connection.on("disconnected", () => {
   console.log("coonention error with mongo db");
 });
 
+
+app.use((req, res, next) => {
+  res.setHeader("Access-Control-Allow-Origin", "http://localhost:3001");
+  next();
+});
+
+app.use((req, res, next) => {
+  res.setHeader(
+    "Access-Control-Allow-Origin",
+    "https://hotels-booking-8wfv.onrender.com/"
+  );
+  next();
+});
+
+
 app.use(cookieParser());
 app.use(express.json());
 
