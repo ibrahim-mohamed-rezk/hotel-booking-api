@@ -42,7 +42,7 @@ mongoose.connection.on("disconnected", () => {
 
 app.use(
   cors({
-    origin: "*",
+    origin: ["https://hotel-booking-admin-i6pc.onrender.com","*"],
     credentials: true,
   })
 );
