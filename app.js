@@ -6,6 +6,7 @@ import usershRoute from "./routes/users.js";
 import roomsRoute from "./routes/rooms.js";
 import hotelsRoute from "./routes/hotels.js";
 import cookieParser from "cookie-parser";
+import cors from "cors";
 
 const app = express();
 dotenv.config();
@@ -33,16 +34,18 @@ mongoose.connection.on("disconnected", () => {
   console.log("coonention error with mongo db");
 });
 
+// app.use((req, res, next) => {
+//   res.setHeader("Access-Control-Allow-Origin", "http://localhost:3007");
+//   res.setHeader("Access-Control-Allow-Headers", "Content-Type");
+//   next();
+// });
 
-app.use((req, res, next) => {
-  res.setHeader(
-    "Access-Control-Allow-Origin",
-    "https://hotels-booking-8wfv.onrender.com"
-  );
-  res.setHeader("Access-Control-Allow-Headers", "Content-Type");
-  next();
-});
-
+app.use(
+  cors({
+    origin: `${process.env.CORS_ORGIN}`,
+    credentials: true,
+  })
+);
 
 app.use(cookieParser());
 app.use(express.json());
@@ -67,7 +70,7 @@ app.all("*", (req, res) => {
   res.status(404).send("<h2>Page not found</h1>");
 });
 
-app.listen(8000, () => {
+app.listen(9500, () => {
   console.log("server is running");
   connect();
 });

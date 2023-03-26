@@ -9,6 +9,10 @@ const roomSchema = new mongoose.Schema(
       type: Number,
       required: true,
     },
+    hotelId: {
+      type: String,
+      required: true,
+    },
     maxPeople: {
       type: Number,
       required: true,
