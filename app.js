@@ -42,7 +42,7 @@ mongoose.connection.on("disconnected", () => {
 
 app.use(
   cors({
-    origin: `${process.env.CORS_ORGIN}`,
+    origin: "*",
     credentials: true,
   })
 );
