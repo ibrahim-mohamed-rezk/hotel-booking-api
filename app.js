@@ -67,7 +67,7 @@ app.use((err, req, res, next) => {
 });
 
 app.all("*", (req, res) => {
-  res.status(404).send("<h2>Page not found</h1>");
+  res.status(404).json({data:'none'});
 });
 
 app.listen(9500, () => {
