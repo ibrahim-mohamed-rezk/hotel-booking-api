@@ -46,7 +46,7 @@ app.use(
       "https://hotel-booking-admin-i6pc.onrender.com",
       "https://hotels-booking-8wfv.onrender.com",
       "http://localhost:3000/",
-      "http://localhost:3000/",
+      "http://localhost:3001/",
     ],
     credentials: true,
   })
