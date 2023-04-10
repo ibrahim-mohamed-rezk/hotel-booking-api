@@ -41,7 +41,7 @@ mongoose.connection.on("disconnected", () => {
 // });
 
 app.use(function(req, res, next) {
-  const allowedOrigins = ["https://hotel-booking-admin-i6pc.onrender.com","https://hotels-booking-8wfv.onrender.com","http://localhost:3000/","http://localhost:3001/"];
+  const allowedOrigins = ["https://hotel-booking-admin-i6pc.onrender.com","https://hotels-booking-8wfv.onrender.com","http://localhost:3000","http://localhost:3001"];
   const origin = req.headers.origin;
 
   if (allowedOrigins.includes(origin)) {
