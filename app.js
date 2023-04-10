@@ -81,4 +81,4 @@ app.all("*", (req, res) => {
 app.listen(9500, () => {
   console.log("server is running");
   connect();
-});
+}); 
